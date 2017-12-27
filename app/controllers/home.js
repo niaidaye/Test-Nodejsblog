@@ -11,9 +11,23 @@ router.get('/', (req, res, next) => {
   Article.find((err, articles) => {
     if (err) return next(err);
     res.render('blog/index', {
-      title: 'Generator-Express MVC',
+      title: 'Node-Blog Home',
       articles: articles,
       pretty: true,
     });
+  });
+});
+// about
+router.get('/about', (req, res, next) => {
+  res.render('blog/index', {
+    title: 'Node-Blog About',
+    pretty: true,
+  });
+});
+// contact
+router.get('/contact', (req, res, next) => {
+  res.render('blog/index', {
+    title: 'Node-Blog Contact',
+    pretty: true,
   });
 });

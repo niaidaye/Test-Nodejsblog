@@ -12,11 +12,16 @@ module.exports = (app, config) => {
   const env = process.env.NODE_ENV || 'development';
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';
-  
+
   app.set('views', config.root + '/app/views');
   app.set('view engine', 'jade');
 
+  //添的路加由的样式
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
+  app.use(function (req, res, next) {
+    app.locals.pageName = req.path;
+    next();
+  })
   app.use(logger('dev'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({
