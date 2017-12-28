@@ -9,17 +9,30 @@ block main
       .container
         nav.blog-nav
           if pageName === '/'
-            a.blog-nav-item.active(href='/') 首页
+            a.blog-nav-item.active(href='/')
+              i.fa.fa-home
+              | &nbsp;首页
           else
-            a.blog-nav-item(href='/') 首页
+            a.blog-nav-item(href='/')
+              i.fa.fa-home
+              | &nbsp;首页
           if pageName === '/about'
-            a.blog-nav-item.active(href='/about') 关于我们
+            a.blog-nav-item.active(href='/about')
+              i.fa.fa-address-card
+              | &nbsp;关于我
           else
-            a.blog-nav-item(href='/about') 关于我们
+            a.blog-nav-item(href='/about')
+              i.fa.fa-address-card
+              | &nbsp;关于我
           if pageName === '/contact'
-            a.blog-nav-item.active(href='/contact') 联系
+            a.blog-nav-item.active(href='/contact')
+              i.fa.fa-volume-control-phone
+              | &nbsp;联系
           else
-            a.blog-nav-item(href='/contact') 联系
+            a.blog-nav-item(href='/contact')
+              i.fa.fa-volume-control-phone
+              | &nbsp;联系
+
     .container
       .row
         .col-sm-8.blog-main
